@@ -22,7 +22,7 @@ int is_digit(char *s)
 }
 
 /**
- * _strlen - returns the length
+ * _strlen - main
  * @s: string to evaluate
  *
  * Return: length of string
@@ -39,7 +39,7 @@ int _strlen(char *s)
 }
 
 /**
- * errors - errors for main
+ * errors - errors
  */
 void errors(void)
 {
@@ -49,10 +49,10 @@ void errors(void)
 
 /**
  * main - multiplies two positive numbers
- * @argc: number of arguments
- * @argv: array of arguments
+ * @argc: numbers
+ * @argv: arrays
  *
- * Return: always 0 (Success)
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
