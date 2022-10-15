@@ -10,7 +10,7 @@
 int str_len(char *s)
 {
 	int i;
-	
+
 	i = 0;
 	while (s[i] != '\0')
 	{
@@ -29,7 +29,7 @@ int str_len(char *s)
 char *str_cpy(char *dest, char *src)
 {
 	int len, i;
-	
+
 	len = 0;
 	while (src[len] != '\0')
 	{
@@ -54,13 +54,13 @@ char *str_cpy(char *dest, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	
+
 	int len1, len2;
-	
+
 	len1 = str_len(name);
 	len2 = str_len(owner);
 	dog = malloc(sizeof(dog_t));
-	
+
 	if (dog == NULL)
 		return (NULL);
 	dog->name = malloc(sizeof(char) * (len1 + 1));
