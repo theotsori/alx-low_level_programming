@@ -11,5 +11,12 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
+	unsigned long int co2 = n ^ m, bits = 0;
 
+	while (co2 > 0)
+	{
+		bits += (co2 & 1);
+		co2 >>= 1;
+	}
+	return (bits);
 }
