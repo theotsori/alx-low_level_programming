@@ -6,7 +6,7 @@
  * to another.
  * @n: long unsigned int
  * @m: long unsigned int
- * 
+ *
  * Return: always 0.
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
