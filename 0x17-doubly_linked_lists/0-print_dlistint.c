@@ -4,6 +4,7 @@
 /**
  * print_dlistint - function that prints elemnts of linked list
  * @h: head node
+ * Return: count
  */
 size_t print_dlistint(const dlistint_t *h)
 {
