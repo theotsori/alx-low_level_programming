@@ -11,12 +11,13 @@
  */
 unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned long int co2 = n ^ m, bits = 0;
+	unsigned long int x = n ^ m;
+	unsigned int count = 0;
 
-	while (co2 > 0)
+	while (x)
 	{
-		bits += (co2 & 1);
-		co2 >>= 1;
+		count += x & 1;
+		x >>= 1;
 	}
-	return (bits);
+	return (count);
 }
