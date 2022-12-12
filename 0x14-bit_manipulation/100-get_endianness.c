@@ -2,15 +2,25 @@
 
 /**
  * get_endianness - function that checks endianness
+ * union - contains int and char array
  * Return: 0
  */
 int get_endianness(void)
 {
-	int num = 1;
-	char *endian = (char *)&num;
+	union
+	{
+		int i;
+		char c[sizeof(int)];
+	} u;
 
-	if (*endian == 1)
+	u.i = 1;
+
+	if (u.c[0] == 1)
+	{
 		return (1);
-
-	return (0);
+	}
+	else
+	{
+		return (0);
+	}
 }
