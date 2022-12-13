@@ -1,32 +1,40 @@
+<head>
+<style>
+mark {
+    background-color: yellow;
+    color: black;
+}
+</style>
+</head>
 <h1>Dynamic Libraries</h1>
 <img src="https://cdn.ttgtmedia.com/rms/onlineimages/static_linking_vs_dynamic_linking-f_mobile.png">
 <h2>What is a dynamic library, how does it work, how to create one, and how to use it</h2>
 <p>A dynamic library is a file containing compiled code that can be linked to by a program at runtime, allowing the program to use the functionality implemented in the library. This is in contrast to a static library, which is linked to by a program at compile time.
 
-To create a dynamic library, you can compile your source code files into a shared object file using a compiler such as GCC. For example, the following command can be used to create a dynamic library called libmylib.so from the source code files file1.c and file2.c:</p><br>
-<ul>
-gcc -c -fPIC file1.c file2.c
-gcc -shared -o libmylib.so file1.o file2.o
-</ul>
+To create a dynamic library, you can compile your source code files into a shared object file using a compiler such as GCC. For example, the following command can be used to create a dynamic library called libmylib.so from the source code files file1.c and file2.c:</p>
+
+<mark>gcc -c -fPIC file1.c file2.c</mark>
+<mark>gcc -shared -o libmylib.so file1.o file2.o</mark>
+
 <p>To use a dynamic library in a program, you can specify the library name and its location when compiling the program using the -l and -L options. For example, the following command can be used to compile a program called myprog that uses the dynamic library libmylib.so:
 gcc -o myprog myprog.c -lmylib -L/path/to/libmylib.so
-You can also use the LD_LIBRARY_PATH environment variable to specify the location of the dynamic library when running the program. For example:</p><br>
+You can also use the LD_LIBRARY_PATH environment variable to specify the location of the dynamic library when running the program. For example:</p>
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to
-./myprog
+<mark>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/path/to
+./myprog</mark>
 
-<p>Dynamic libraries can be useful for many reasons, including code reusability, modularity, and reducing the memory footprint of a program.</p><br>
+<p>Dynamic libraries can be useful for many reasons, including code reusability, modularity, and reducing the memory footprint of a program.</p>
 
 <h2>What is the environment variable $LD_LIBRARY_PATH and how to use it</h2>
 <p>In Linux and other Unix-like operating systems, the LD_LIBRARY_PATH environment variable is used to specify a list of directories where the dynamic linker should search for shared libraries when loading a program. This allows programs to use shared libraries that are not in the default search path of the linker.
 
-To use the LD_LIBRARY_PATH variable, you can set it to a colon-separated list of directories containing the shared libraries that you want to use. For example, the following command sets the LD_LIBRARY_PATH variable to the /usr/local/lib and /usr/local/lib64 directories:</p><br>
+To use the LD_LIBRARY_PATH variable, you can set it to a colon-separated list of directories containing the shared libraries that you want to use. For example, the following command sets the LD_LIBRARY_PATH variable to the /usr/local/lib and /usr/local/lib64 directories:</p>
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/lib64
+<mark>export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib:/usr/local/lib64</mark>
 
 <p>Once the LD_LIBRARY_PATH variable is set, you can run your program as usual. The dynamic linker will search the specified directories for the shared libraries that the program depends on, in addition to the default search path.
 
-It's important to note that setting the LD_LIBRARY_PATH variable can potentially pose a security risk, as it allows programs to use shared libraries from arbitrary directories. Therefore, it's recommended to only use it when absolutely necessary, and to carefully control the directories that are included in the search path.</p><br>
+It's important to note that setting the LD_LIBRARY_PATH variable can potentially pose a security risk, as it allows programs to use shared libraries from arbitrary directories. Therefore, it's recommended to only use it when absolutely necessary, and to carefully control the directories that are included in the search path.</p>
 
 <h2>What are the differences between static and shared libraries</h2>
 <p>The main difference between static and shared libraries is how and when they are linked to a program. A static library is a collection of object files that are linked to a program at compile time, while a shared library is a compiled library that is linked to a program at runtime.
