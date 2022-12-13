@@ -1,11 +1,3 @@
-<head>
-<style>
-mark {
-    background-color: yellow;
-    color: black;
-}
-</style>
-</head>
 <h1>Dynamic Libraries</h1>
 <img src="https://cdn.ttgtmedia.com/rms/onlineimages/static_linking_vs_dynamic_linking-f_mobile.png">
 <h2>What is a dynamic library, how does it work, how to create one, and how to use it</h2>
@@ -43,7 +35,7 @@ This means that a static library is included in the final executable file of a p
 
 Another difference between static and shared libraries is that a static library is generally linked to a program using the ar and ranlib tools, while a shared library is linked using the ld linker. This means that the process of linking to a static library is typically done at compile time, while linking to a shared library is done at runtime.
 
-In general, shared libraries are more flexible and efficient than static libraries, but they also require additional support from the operating system and the runtime environment to work properly. For these reasons, shared libraries are more commonly used in modern software development.</p><br>
+In general, shared libraries are more flexible and efficient than static libraries, but they also require additional support from the operating system and the runtime environment to work properly. For these reasons, shared libraries are more commonly used in modern software development.</p>
 
 <h2>Basic usage nm, ldd, ldconfig</h2>
 <p>nm is a command line utility that displays the symbol table for object files. The symbol table contains information about symbols such as function and variable names, their addresses in the object file, and their types.</p>
