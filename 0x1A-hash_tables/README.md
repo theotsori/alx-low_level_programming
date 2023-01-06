@@ -2,6 +2,7 @@
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg/240px-Hash_table_4_1_1_0_0_1_0_LL.svg.png">
 <h2>This Project was done under the following requirements</h2>
 <ul>
+   <li>
     Allowed editors: vi, vim, emacs
     All your files will be compiled on Ubuntu 20.04 LTS using gcc, using the options -Wall -Werror -Wextra -pedantic -std=gnu89
     All your files should end with a new line
@@ -13,4 +14,5 @@
     The prototypes of all your functions should be included in your header file called hash_tables.h
     Don’t forget to push your header file
     All your header files should be include guarded
+   <li>
 <ul>
