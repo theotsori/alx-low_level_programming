@@ -1,24 +1,48 @@
+# Compiler
 CC = gcc
-SRC = $(wildcard *.c)
-OBJ = $(SRC:%.c=%.o)
+
+# Source files
+SRC = main.c school.c
+
+# Object files
+OBJ = $(SRC:.c=.o)
+
+# Executable name
 NAME = school
 
-.PHONY: all clean fclean oclean re
+# Program to delete files
+RM = rm -f
 
+# Compiler flags
+CFLAGS = -Wall -Werror -Wextra -pedantic
+
+# Main rule
 all: $(NAME)
 
+# Build executable
 $(NAME): $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) $(OBJ) -o $(NAME)
 
+# Compile object files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean temporary and object files
 clean:
-	-@rm -f *~ *.swp $(NAME)
+	$(RM) $(NAME) *~ \#*\# *.o
 
+# Clean object files
 oclean:
-	-@rm -f $(OBJ)
+	$(RM) $(OBJ)
 
+# Clean everything
 fclean: clean oclean
-	-@rm -f $(NAME)
 
+# Recompile all
 re: fclean all
 
+# Check for missing header file
 $(OBJ): m.h
+
+# Phony targets
+.PHONY: all clean oclean fclean re
