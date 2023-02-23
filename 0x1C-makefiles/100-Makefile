@@ -1,45 +1,28 @@
-# Compiler
 CC = gcc
 
-# Source files
 SRC = main.c school.c
 
-# Object files
-OBJ = $(SRC:.c=.o)
+OBJ = $(SRC:%.c=%.o)
 
-# Executable name
 NAME = school
 
-# Program to delete files
-RM = rm -f
-
-# Compiler flags
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
-# Main rule
 all: $(NAME)
 
-# Build executable
 $(NAME): $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
-# Compile object files
-%.o: %.c
+$(OBJ): %.o: %.c m.h
 	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean temporary and object files
 clean:
-	$(RM) $(NAME) *~ \#*\# *.o
+	@find . \( -name "*~" -o -name "\#*\#" -o -name "$(NAME)" -o -name "*.o" \) -type f -delete
 
-# Clean object files
 oclean:
 	$(RM) $(OBJ)
 
-# Clean everything
-fclean: clean oclean
+fclean: clean
+    $(RM) $(NAME)
 
-# Recompile all
 re: fclean all
-
-# Check for missing header file
-$(OBJ): m.h
