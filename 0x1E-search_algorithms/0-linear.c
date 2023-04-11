@@ -6,6 +6,7 @@
  * @array: array of integers
  * @size: number of elements in array
  * @value: first index where value is located
+ * Return: function muust return -1
  */
 int linear_search(int *array, size_t size, int value)
 {
