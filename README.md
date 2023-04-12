@@ -1,3 +1,4 @@
-# Alx-low_level_programming.
+<h1>Alx-low_level_programming.</h1>
 
-## Simple itteration & Recusrion Tasks
+My academic C projects from Simple shell to printf
+Simple itteration & Recusrion Tasks
